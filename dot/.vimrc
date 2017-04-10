@@ -26,7 +26,7 @@ else
     set background=dark
     "set background=light
 endif
-set background=dark
+set background=light
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
@@ -61,7 +61,7 @@ set softtabstop=4
 set expandtab
 set autoindent
 set ruler
-"set relativenumber
+set relativenumber
 set nu "line numbering
 set wrap
 set textwidth=80
@@ -230,6 +230,8 @@ endfunction
 
 " set same widths for text files too
 autocmd BufNewFile,BufRead *.txt set textwidth=144 | set colorcolumn=150
+autocmd BufNewFile,BufRead *.md set textwidth=144 | set colorcolumn=150
+autocmd BufNewFile,BufRead *.Rmd set textwidth=144 | set colorcolumn=150
 
 " =============== WORD COUNT FUNCTION =============
 " From http://stackoverflow.com/questions/2974954/correct-word-count-of-a-latex-document
@@ -264,3 +266,30 @@ endfunction
 " command. 
 " The mysyntaxfile-add instructions also have lots of details about custom
 " colour highlight schemes and the likes.
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+set path+=**
+set wildmenu
+set wildmode=list:full
+
+" Spell checking
+autocmd FileType latex,tex,md,markdown setlocal spell
+set complete +=k
+
+" Make dir for undo files
+if !isdirectory($HOME."/.vim")
+    call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
+
+" Configuration for https://github.com/airblade/vim-gitgutter
+set updatetime=10
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %

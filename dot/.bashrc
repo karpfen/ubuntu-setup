@@ -118,6 +118,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+. /etc/bash_completion
 
 # Essential line to get tmux to work with solarized:
 export TERM=screen-256color-bce
