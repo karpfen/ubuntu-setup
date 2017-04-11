@@ -1,6 +1,6 @@
 [user]
-	name = mpadge
-	email = mark.padgham@email.com
+    name = Andreas Petutschnig
+    email = andreas@petutschnig.de
 [core]
 	autocrlf = input
 	safecrlf = true
@@ -14,4 +14,7 @@
     dump = cat-file -p
 
 [push]
-	default = simple
+    default = simple
+
+[credential]
+    helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
