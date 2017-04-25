@@ -133,9 +133,6 @@ alias sudo='sudo ' # ensures that sudo R loads .Rprofile
 # shell promopt (31m = red, 32m = green)
 export PS1='\[\e[1;32m\]\w\$\[\e[0m\] '
 
-# added by travis gem
-[ -f /home/markus/.travis/travis.sh ] && source /home/markus/.travis/travis.sh
-
 # open man pages with vim
 man() {
     /usr/bin/man $* | \
