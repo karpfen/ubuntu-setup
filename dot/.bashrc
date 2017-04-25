@@ -85,13 +85,13 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
+    alias grep='grep --color=auto -n'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -132,6 +132,9 @@ alias sudo='sudo ' # ensures that sudo R loads .Rprofile
 
 # shell promopt (31m = red, 32m = green)
 export PS1='\[\e[1;32m\]\w\$\[\e[0m\] '
+
+# added by travis gem
+[ -f /home/markus/.travis/travis.sh ] && source /home/markus/.travis/travis.sh
 
 # open man pages with vim
 man() {
