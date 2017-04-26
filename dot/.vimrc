@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jalvesaq/Nvim-R'
+Plugin 'jimhester/lintr'
 call vundle#end()
 filetype plugin indent on
 
@@ -293,3 +294,6 @@ set updatetime=10
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+
+" open each buffer in its own tabpage
+:au BufAdd,BufNewFile * nested tab sball
