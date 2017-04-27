@@ -149,6 +149,7 @@ alias replaceAllSpaces='for file in *; do mv "$file" `echo $file | tr " " "_"` ;
 alias generatePassword='apg -m 20 -x 1 -M SNCL -a 1 -n 1'
 alias histg='history | grep'
 alias du='ncdu'
+alias run='xdg-open'
 #dump clipboard to file
 alias dclip='xclip -o > clipboard.txt'
 
