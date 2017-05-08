@@ -66,7 +66,7 @@ set relativenumber
 set nu "line numbering
 set wrap
 set textwidth=80
-set colorcolumn=84
+set colorcolumn=80
 set undofile
 "global searches, so :%s/foo/bar/g automatically becomes :%s/foo/bar
 set gdefault 
