@@ -276,7 +276,7 @@ set wildmenu
 set wildmode=list:full
 
 " Spell checking
-autocmd FileType latex,tex,md,markdown setlocal spell
+autocmd FileType latex,tex,md,markdown,Rmd setlocal spell
 set complete +=k
 
 " Make dir for undo files
