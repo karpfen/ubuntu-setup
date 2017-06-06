@@ -164,8 +164,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_w = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_w = 1
 let g:syntastic_check_on_wq = 0
 "let b:syntastic_mode = 0 " disable
 " http://stackoverflow.com/questions/20030603/vim-syntastic-how-to-disable-the-checker
@@ -233,6 +233,7 @@ endfunction
 autocmd BufNewFile,BufRead *.txt set textwidth=144 | set colorcolumn=150
 autocmd BufNewFile,BufRead *.md set textwidth=144 | set colorcolumn=150
 autocmd BufNewFile,BufRead *.Rmd set textwidth=144 | set colorcolumn=150
+autocmd BufNewFile,BufRead ~/R/osmprob/* set textwidth=80 | set colorcolumn=81
 
 " =============== WORD COUNT FUNCTION =============
 " From http://stackoverflow.com/questions/2974954/correct-word-count-of-a-latex-document
@@ -276,7 +277,7 @@ set wildmenu
 set wildmode=list:full
 
 " Spell checking
-autocmd FileType latex,tex,md,markdown setlocal spell
+autocmd FileType latex,tex,md,markdown,Rmd set spell
 set complete +=k
 
 " Make dir for undo files
