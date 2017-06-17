@@ -137,7 +137,7 @@ nmap <Space> <Plug>RDSendLine
 " stop the plugin remapping underscore to '->':
 let R_assign = 0
 
-let g:R_in_buffer = 1
+let g:R_in_buffer = 0
 let g:R_tmux_split = 1
 "let g:R_rconsole_width = winwidth("%") / 2
 let g:R_nvimpager = "horizontal"
@@ -291,4 +291,4 @@ set updatetime=30
 cmap w!! w !sudo tee > /dev/null %
 
 " open each buffer in its own tabpage
-" :au BufAdd,BufNewFile * nested tab sball
+:au BufAdd,BufNewFile * nested tab sball
