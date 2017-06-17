@@ -16,8 +16,22 @@ call vundle#end()
 
 "execute pathogen#infect()
 
-let g:airline_theme='understated'
+" configure vim-airline
+let g:airline_theme='term'
+" show all open buffers on top
 let g:airline#extensions#tabline#enabled = 1
+" nice looking things
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
 
 " https://github.com/sickill/vim-monokai
 colorscheme monokai
@@ -140,6 +154,7 @@ let R_assign = 0
 let g:R_in_buffer = 0
 let g:R_tmux_split = 1
 "let g:R_rconsole_width = winwidth("%") / 2
+let g:R_rconsole_width = 120
 let g:R_nvimpager = "horizontal"
 let R_args = ['--no-save', '--quiet']
 let R_tmux_title = 'R'
