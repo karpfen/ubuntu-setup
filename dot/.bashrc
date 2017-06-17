@@ -42,9 +42,9 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
+#case "$TERM" in
+#    xterm-color) color_prompt=yes;;
+#esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
@@ -94,6 +94,7 @@ fi
 alias ll='ls -lFh'
 alias la='ls -lFhA'
 alias l='ls -CF'
+alias vim="nvim"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,10 +122,7 @@ fi
 . /etc/bash_completion
 
 # Essential line to get tmux to work with solarized:
-export TERM=screen-256color-bce
-
-# Add custom colour scheme produced from http://ciembor.github.io/4bit/#
-#source /data/Dropbox/mark/system/solarized.sh
+#export TERM=screen-256color-bce
 
 # Nvim-r-plugin requires its own line in .vimrc to achieve this
 alias R='R --no-save --quiet'

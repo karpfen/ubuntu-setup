@@ -1,36 +1,30 @@
 " ~./.vimrc
 "
 runtime! debian.vim 
-" sets 'nocompatible'
-set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'jalvesaq/Nvim-R'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'jimhester/lintr'
 call vundle#end()
-filetype plugin indent on
+"filetype plugin indent on
 
-execute pathogen#infect()
+"execute pathogen#infect()
+
+let g:airline_theme='understated'
+let g:airline#extensions#tabline#enabled = 1
+
+" https://github.com/sickill/vim-monokai
+colorscheme monokai
 
 if has("syntax")
-    syntax on
+    syntax enable
 endif
-
-if has ('gui_running')
-    set background=light
-else
-    set background=dark
-    "set background=light
-endif
-set background=light
-set t_Co=16
-let g:solarized_termcolors=16
-colorscheme solarized
 
 if has("autocmd")
     " Jump to the last position when reopening a file
@@ -143,9 +137,9 @@ nmap <Space> <Plug>RDSendLine
 " stop the plugin remapping underscore to '->':
 let R_assign = 0
 
-let g:R_in_buffer = 0
+let g:R_in_buffer = 1
 let g:R_tmux_split = 1
-let g:R_rconsole_width = winwidth("%") / 2
+"let g:R_rconsole_width = winwidth("%") / 2
 let g:R_nvimpager = "horizontal"
 let R_args = ['--no-save', '--quiet']
 let R_tmux_title = 'R'
@@ -165,16 +159,16 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_w = 1
+let g:syntastic_check_on_w = 0
 let g:syntastic_check_on_wq = 0
-"let b:syntastic_mode = 0 " disable
+let b:syntastic_mode = 0 " disable
 " http://stackoverflow.com/questions/20030603/vim-syntastic-how-to-disable-the-checker
 let g:syntastic_mode_map = { 
     \ 'mode': 'passive', 
     \ 'active_filetypes': [],
     \ 'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-"let g:syntastic_debug = 1
+let g:syntastic_debug = 1
 " - open .cpp and :mes, :SyntasticInfo to get debug info
 " see https://github.com/vim-syntastic/syntastic/issues/1246 and
 " https://github.com/Valloric/YouCompleteMe#user-content-the-gycm_show_diagnostics_ui-option
@@ -291,10 +285,10 @@ set undodir=~/.vim/undo-dir
 set undofile
 
 " Configuration for https://github.com/airblade/vim-gitgutter
-set updatetime=10
+set updatetime=30
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
 " open each buffer in its own tabpage
-:au BufAdd,BufNewFile * nested tab sball
+" :au BufAdd,BufNewFile * nested tab sball

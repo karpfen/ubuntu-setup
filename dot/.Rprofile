@@ -14,7 +14,7 @@ local ({
 #options (max.print=100)
 options (width = 80)
 options (scipen=10)
-options (editor='vim')
+options (editor='nvim')
 #options (prompt='R> ', digits=4)
 
 .env <- new.env()
