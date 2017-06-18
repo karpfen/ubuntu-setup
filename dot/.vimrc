@@ -8,11 +8,11 @@ Plugin 'jalvesaq/Nvim-R'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jimhester/lintr'
 call vundle#end()
-"filetype plugin indent on
+filetype plugin indent on
 
 "execute pathogen#infect()
 
@@ -162,6 +162,13 @@ let g:R_notmuxconf = 1 "use my .tmux.conf, not the Nvim-r one
 
 let r_syntax_folding = 1
 
+"-------------------------------------------
+"-----------   YouCompleteMe   -------------
+"-------------------------------------------
+
+" define global YCM config
+" https://jonasdevlieghere.com/a-better-youcompleteme-config/
+let g:ycm_global_ycm_extra_conf = '~/.nvim/.ycm_extra_conf.py'
 
 "-------------------------------------------
 "-------------   syntastic   ---------------
@@ -183,7 +190,7 @@ let g:syntastic_mode_map = {
     \ 'active_filetypes': [],
     \ 'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-let g:syntastic_debug = 1
+let g:syntastic_debug = 0
 " - open .cpp and :mes, :SyntasticInfo to get debug info
 " see https://github.com/vim-syntastic/syntastic/issues/1246 and
 " https://github.com/Valloric/YouCompleteMe#user-content-the-gycm_show_diagnostics_ui-option
@@ -306,4 +313,4 @@ set updatetime=30
 cmap w!! w !sudo tee > /dev/null %
 
 " open each buffer in its own tabpage
-:au BufAdd,BufNewFile * nested tab sball
+":au BufAdd,BufNewFile * nested tab sball
