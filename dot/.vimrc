@@ -34,6 +34,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 
 " https://github.com/sickill/vim-monokai
+" needs to be put in .config/nvim/colors/
 colorscheme monokai
 
 if has("syntax")
