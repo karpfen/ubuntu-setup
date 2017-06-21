@@ -68,6 +68,7 @@ python3-dev
 python-bs4 
 python-dev 
 python-regex 
+qrencode
 r-base 
 r-base-dev
 r-cran-rjava
