@@ -11,6 +11,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jimhester/lintr'
+Plugin 'tyru/open-browser.vim'
+Plugin 'edkolev/tmuxline.vim'
 call vundle#end()
 filetype plugin indent on
 

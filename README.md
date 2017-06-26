@@ -1,8 +1,8 @@
 Ubuntu System Setup
 ===========================
 
-Adapted from 
-[ubuntu-post-install scripts of Sam Hewitt](https://github.com/snwh/ubuntu-post-install), to whom all credit is due.
+Adapted from the ubuntu-post-install scripts of [Sam Hewitt](https://github.com/snwh/ubuntu-post-install) and [Mark
+Padgham](https://github.com/mpadge/ubuntu-setup).
 
 ## Usage
 
