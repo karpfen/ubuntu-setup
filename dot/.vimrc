@@ -22,6 +22,7 @@ filetype plugin indent on
 let g:airline_theme='term'
 " show all open buffers on top
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
 " nice looking things
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
