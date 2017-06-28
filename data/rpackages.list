@@ -52,6 +52,7 @@ rJava
 rjson
 rmarkdown
 roxygen2 
+plotly
 RPostgreSQL
 RSQLite
 rvest
